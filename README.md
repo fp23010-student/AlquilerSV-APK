@@ -1,17 +1,24 @@
-# alquileres_app
+# Alquileres SV - App móvil
 
-A new Flutter project.
+App Android (Flutter) para que propietarios de casas o locales pequeños gestionen
+inquilinos, contratos y cobros, con recordatorios automáticos y recibos digitales.
 
-## Getting Started
+## Qué hace
+- Registra inmuebles, inquilinos y contratos. Al crear un contrato se generan los pagos mensuales.
+- Calcula los días de atraso de cada pago y el promedio (métrica del tema).
+- Funciona sin internet: guarda todo en el teléfono (SQLite) y sincroniza al reconectar.
+- Recordatorios automáticos de pago (notificaciones locales) y recordatorio/recibo por WhatsApp.
 
-This project is a starting point for a Flutter application.
+## Arquitectura
+App Flutter (SQLite local) <-> API en Rust (Axum) <-> CouchDB (Docker).
+Servidor: ENLACE_AL_REPO_DE_LA_API
 
-A few resources to get you started if this is your first Flutter project:
+## Descargar e instalar
+1. Descargar la APK: ENLACE_A_LA_APK
+2. Permitir la instalación de orígenes desconocidos y aceptar las notificaciones.
+3. Para sincronizar, levantar la API (ver su README) y poner su dirección en
+   Ajustes -> Dirección de la API. Sin servidor, la app funciona igual, solo local.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Desarrollo
+flutter pub get
+flutter run
