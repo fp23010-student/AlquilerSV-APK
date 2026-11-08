@@ -2,8 +2,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'api.dart';
 import 'barra_sync.dart';
+import 'config.dart';
 import 'local.dart';
+import 'notificaciones.dart';
 import 'sync.dart';
+import 'pantallas/ajustes.dart';
 import 'pantallas/inicio.dart';
 import 'pantallas/inmuebles.dart';
 import 'pantallas/inquilinos.dart';
@@ -13,6 +16,8 @@ import 'pantallas/registro.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Local.iniciar();
+  await Config.cargar();
+  await Notificaciones.iniciar();
   runApp(const AlquileresApp());
 }
 
@@ -96,6 +101,7 @@ class _HomeState extends State<Home> {
       Inmuebles(propietarioId: widget.propietarioId),
       const Inquilinos(),
       Contratos(propietarioId: widget.propietarioId),
+      const Ajustes(),
     ];
     return Scaffold(
       body: SafeArea(
@@ -122,6 +128,7 @@ class _HomeState extends State<Home> {
           NavigationDestination(icon: Icon(Icons.apartment), label: 'Inmuebles'),
           NavigationDestination(icon: Icon(Icons.people_outline), label: 'Inquilinos'),
           NavigationDestination(icon: Icon(Icons.description_outlined), label: 'Contratos'),
+          NavigationDestination(icon: Icon(Icons.settings_outlined), label: 'Ajustes'),
         ],
       ),
     );

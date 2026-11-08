@@ -40,6 +40,8 @@ dependencies:
   sqflite_common_ffi: ^2.4.5
   path: ^1.9.1
   uuid: ^4.6.0
+  flutter_local_notifications: ^19.0.0
+  timezone: ^0.10.1
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +53,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -93,3 +96,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/icono.png"
+  adaptive_icon_background: "#00796B"
+  adaptive_icon_foreground: "assets/icon/icono.png"
